@@ -9,13 +9,17 @@ class MasterViewController: UIViewController {
         super.viewDidLoad()
         self.model = MasterModel()
         //print("viewDidloadMaster")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         presentView()
     }
     
+    /*
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("🤗\(#function)")
+        presentView()
+    }
+ */
+ 
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         presentView()
         //NOTE:- We may not end up using this

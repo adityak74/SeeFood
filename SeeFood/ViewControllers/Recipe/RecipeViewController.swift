@@ -22,13 +22,13 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         recipeTableView.delegate = self
         recipeTableView.dataSource = self
+        print("\(#function):Got ingredients:\(String(describing: ingredients))")
         
         rapidService.getRecipes(from: ingredients!) { (resultRecipies) in
             self.recipies = resultRecipies!
             DispatchQueue.main.async {
                 print("Got Recipies : ", self.recipies.count)
                 self.recipeTableView.reloadData()
-                
             }
         }
         

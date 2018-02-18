@@ -19,6 +19,7 @@ class WatsonViewController: UIViewController {
     
     var visualRecognition: VisualRecognition!
     var delegate: WatsonViewControllerDelegate?
+    var imagePickerController: ImagePickerController! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,14 @@ class WatsonViewController: UIViewController {
         
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        imagePickerController = ImagePickerController()
+//        imagePickerController.delegate = self as ImagePickerDelegate
+//        self.present(imagePickerController, animated: true, completion: nil)
+//    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        let imagePickerController = ImagePickerController()
+        imagePickerController = ImagePickerController()
         imagePickerController.delegate = self as ImagePickerDelegate
         self.present(imagePickerController, animated: true, completion: nil)
     }
@@ -86,7 +93,11 @@ extension WatsonViewController : ImagePickerDelegate {
                         SwiftSpinner.hide()
                         // Segue to the new controller
                         DispatchQueue.main.async {
+                            
                             self.delegate?.signalRapid(with: possibleItemsList)
+//                            self.imagePickerController.collapseGalleryView({
+//                                self.delegate?.signalRapid(with: possibleItemsList)
+//                            })
                         }
                         
                     }
