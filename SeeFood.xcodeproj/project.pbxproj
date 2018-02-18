@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		418400AC203922F8003BDCB8 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AB203922F8003BDCB8 /* AppConst.swift */; };
+		418400AE20392316003BDCB8 /* ApplicationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AD20392315003BDCB8 /* ApplicationSession.swift */; };
+		418400B02039231C003BDCB8 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AF2039231C003BDCB8 /* BaseService.swift */; };
+		418400B42039232A003BDCB8 /* RapidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400B32039232A003BDCB8 /* RapidService.swift */; };
+		418400B620392345003BDCB8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400B520392345003BDCB8 /* Log.swift */; };
 		606E962A2038EA0200AEE27D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E96292038EA0200AEE27D /* AppDelegate.swift */; };
 		606E962C2038EA0200AEE27D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E962B2038EA0200AEE27D /* ViewController.swift */; };
 		606E962F2038EA0200AEE27D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606E962D2038EA0200AEE27D /* Main.storyboard */; };
@@ -54,6 +59,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		418400AB203922F8003BDCB8 /* AppConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		418400AD20392315003BDCB8 /* ApplicationSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSession.swift; sourceTree = "<group>"; };
+		418400AF2039231C003BDCB8 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		418400B32039232A003BDCB8 /* RapidService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidService.swift; sourceTree = "<group>"; };
+		418400B520392345003BDCB8 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		606E96262038EA0200AEE27D /* SeeFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606E96292038EA0200AEE27D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		606E962B2038EA0200AEE27D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +109,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		418400A820392194003BDCB8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				606E962D2038EA0200AEE27D /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		418400A9203921AF003BDCB8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				606E962B2038EA0200AEE27D /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		418400AA203921BF003BDCB8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				606E96332038EA0200AEE27D /* Assets.xcassets */,
+				606E96292038EA0200AEE27D /* AppDelegate.swift */,
+				606E96352038EA0200AEE27D /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		418400B720392364003BDCB8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				418400AB203922F8003BDCB8 /* AppConst.swift */,
+				418400AD20392315003BDCB8 /* ApplicationSession.swift */,
+				418400AF2039231C003BDCB8 /* BaseService.swift */,
+				418400B32039232A003BDCB8 /* RapidService.swift */,
+				418400B520392345003BDCB8 /* Log.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		606E961D2038EA0200AEE27D = {
 			isa = PBXGroup;
 			children = (
@@ -124,13 +172,12 @@
 			children = (
 				606E96622038FE9C00AEE27D /* ImagePicker.framework */,
 				606E965A2038F73500AEE27D /* VisualRecognitionV3.framework */,
-				606E96292038EA0200AEE27D /* AppDelegate.swift */,
-				606E962B2038EA0200AEE27D /* ViewController.swift */,
-				606E962D2038EA0200AEE27D /* Main.storyboard */,
-				606E96332038EA0200AEE27D /* Assets.xcassets */,
-				606E96352038EA0200AEE27D /* LaunchScreen.storyboard */,
-				606E96382038EA0200AEE27D /* Info.plist */,
 				606E96302038EA0200AEE27D /* SeeFood.xcdatamodeld */,
+				418400B720392364003BDCB8 /* Services */,
+				418400A9203921AF003BDCB8 /* ViewControllers */,
+				418400A820392194003BDCB8 /* Storyboards */,
+				418400AA203921BF003BDCB8 /* Supporting Files */,
+				606E96382038EA0200AEE27D /* Info.plist */,
 			);
 			path = SeeFood;
 			sourceTree = "<group>";
@@ -288,8 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				418400AE20392316003BDCB8 /* ApplicationSession.swift in Sources */,
 				606E962C2038EA0200AEE27D /* ViewController.swift in Sources */,
+				418400B02039231C003BDCB8 /* BaseService.swift in Sources */,
+				418400AC203922F8003BDCB8 /* AppConst.swift in Sources */,
 				606E96322038EA0200AEE27D /* SeeFood.xcdatamodeld in Sources */,
+				418400B42039232A003BDCB8 /* RapidService.swift in Sources */,
+				418400B620392345003BDCB8 /* Log.swift in Sources */,
 				606E962A2038EA0200AEE27D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,14 +509,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YEM79BJ364;
+				DEVELOPMENT_TEAM = TL35987CPB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gotapi.umslhack.SeeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = umslhack.api.seefood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,14 +528,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YEM79BJ364;
+				DEVELOPMENT_TEAM = TL35987CPB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gotapi.umslhack.SeeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = umslhack.api.seefood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
