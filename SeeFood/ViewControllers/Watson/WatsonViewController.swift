@@ -11,9 +11,14 @@ import VisualRecognitionV3
 import ImagePicker
 import ToastSwiftFramework
 
+protocol WatsonViewControllerDelegate: class {
+    func signalRapid(with keys: [String])
+}
+
 class WatsonViewController: UIViewController {
     
     var visualRecognition: VisualRecognition!
+    var delegate: WatsonViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,39 +38,6 @@ class WatsonViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func presentRecipeViewController() {
-        let targetStoryboard = UIStoryboard(name: "Recipes", bundle: Bundle.main)
-        guard let targetNavigationVC = targetStoryboard.instantiateInitialViewController() as? UINavigationController,
-            let targetVC = targetNavigationVC.childViewControllers.first as? RecipeViewController else {
-                print("Failed RecipeViewController INIT")
-                return
-        }
-        
-        //NOTE:- change _ = targetNavigat... to targetVC =
-        //targetVC model
-        //targetVC.tableview delegate
-        //targetVC.tableview data source
-        
-        transitionControllers(targetNavigationVC: targetNavigationVC)
-    }
-    
-    func transitionControllers(targetNavigationVC: UINavigationController) {
-        if let watsonVC = childViewControllers.first as? WatsonViewController {
-            transition(from: watsonVC, to: targetNavigationVC, duration: 1.5, setup: {
-                targetNavigationVC.view.alpha = 0.0
-            }, animation: {
-                targetNavigationVC.view.alpha = 1.0
-                watsonVC.view.alpha = 0.0
-            })
-        } else {
-            addFullScreen(controller: targetNavigationVC, animationDuration: 0.5, setup: {
-                targetNavigationVC.view.alpha = 0.0
-            }, animation: {
-                targetNavigationVC.view.alpha = 1.0
-            })
-        }
-    }
 }
 
 extension WatsonViewController : ImagePickerDelegate {
@@ -73,6 +45,7 @@ extension WatsonViewController : ImagePickerDelegate {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
+    
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         
     }
@@ -106,15 +79,14 @@ extension WatsonViewController : ImagePickerDelegate {
                     }
                     
                     imagesRecognized += 1
-                    print("possibleItemsList : ", possibleItemsList)
-                    print(classifiedImages.images[0].classifiers[0].classes[0].classification,
-                          classifiedImages.images[0].classifiers[0].classes[0].score)
+                    //print("possibleItemsList : ", possibleItemsList)
+                    //print(classifiedImages.images[0].classifiers[0].classes[0].classification, classifiedImages.images[0].classifiers[0].classes[0].score)
                     //self.view.makeToast(classifiedImages)
                     if (imagesRecognized == numImagesToRecognize) {
                         SwiftSpinner.hide()
                         // Segue to the new controller
                         DispatchQueue.main.async {
-                            self.presentRecipeViewController()
+                            self.delegate?.signalRapid(with: possibleItemsList)
                         }
                         
                     }

@@ -2,9 +2,13 @@ import UIKit
 
 class MasterViewController: UIViewController {
     
+    private var model: MasterModel?
+    private var presentWatson = true    //FIX ME!!!!!!!!!!!!!!!!!!!!!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.model = MasterModel()
+        //print("viewDidloadMaster")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -17,20 +21,18 @@ class MasterViewController: UIViewController {
         //NOTE:- We may not end up using this
     }
     
+    func setBool(with state: Bool) {
+        self.presentWatson = state
+    }
+    
+    
     func presentView() {
-        /*
-         Ex: if(!persistence_exists) {
-            presentRecipeViewController()
-         } else {
+        print("👍\(#function):presentWatson:\(presentWatson)")
+        if (presentWatson) {
             presentWatsonViewController()
-         }
-         
-         NOTE:- You will need dismissals when you set up segues (not in this function)
-        */
-        
-        //presentWatsonViewController()
-        presentRecipeViewController()
-        
+        } else {
+            presentRecipeViewController()
+        }
     }
     
     func presentWatsonViewController() {
@@ -40,7 +42,7 @@ class MasterViewController: UIViewController {
             return
         }
         
-        //NOTE:- PASS ANYTHING TO DO W/ MODEL
+        watsonVC.delegate = self
         
         if let currentVC = childViewControllers.first, currentVC !== watsonVC {
             transition(from: currentVC, to: watsonVC, duration: 1.5, setup: {
@@ -61,17 +63,21 @@ class MasterViewController: UIViewController {
     func presentRecipeViewController() {
         let targetStoryboard = UIStoryboard(name: "Recipes", bundle: Bundle.main)
         guard let targetNavigationVC = targetStoryboard.instantiateInitialViewController() as? UINavigationController,
-            let _ = targetNavigationVC.childViewControllers.first as? RecipeViewController else {
+            let targetVC = targetNavigationVC.childViewControllers.first as? RecipeViewController else {
                 print("Failed RecipeViewController INIT")
                 return
         }
-        
-        //NOTE:- change _ = targetNavigat... to targetVC =
-        //targetVC model
-        //targetVC.tableview delegate
-        //targetVC.tableview data source
-        
+    
+        targetVC.delegate = self
+        targetVC.ingredients = model?.getIngredients()
         transitionControllers(targetNavigationVC: targetNavigationVC)
+    }
+    
+    func dismissViewController(with state: Bool) {
+        print("👍\(#function):state:\(state)")
+        setBool(with: state)
+        self.dismiss(animated: true, completion: nil)
+        presentView()
     }
     
     func transitionControllers(targetNavigationVC: UINavigationController) {
@@ -89,6 +95,27 @@ class MasterViewController: UIViewController {
                 targetNavigationVC.view.alpha = 1.0
             })
         }
+    }
+    
+}
+
+extension MasterViewController: WatsonViewControllerDelegate {
+    
+    func signalRapid(with keys: [String]) {
+        model?.setIngredients(with: keys)
+        dismissViewController(with: false)
+    }
+}
+
+extension MasterViewController: RecipeViewControllerDelegate {
+    
+    func clearIngredients() {
+        model?.clearIngredients()
+        dismissViewController(with: true)
+    }
+    
+    func addIngredients() {
+        dismissViewController(with: true)
     }
     
 }

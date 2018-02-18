@@ -88,8 +88,16 @@
                         <viewLayoutGuide key="safeArea" id="Hhm-DG-7d0"/>
                     </view>
                     <navigationItem key="navigationItem" id="XMt-hZ-COh">
-                        <barButtonItem key="leftBarButtonItem" title="Clear" id="TcX-cm-de3"/>
-                        <barButtonItem key="rightBarButtonItem" title="Add Ingredient" id="Hkf-vX-2Q2"/>
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="TcX-cm-de3">
+                            <connections>
+                                <action selector="clearButtonTapped:" destination="qgV-Cc-jGP" id="bbT-SM-gVh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Ingredient" id="Hkf-vX-2Q2">
+                            <connections>
+                                <action selector="addIngredientButtonTapped:" destination="qgV-Cc-jGP" id="fI3-kb-Pp1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="recipeTableView" destination="Nib-1S-jnK" id="B0c-sm-pac"/>
