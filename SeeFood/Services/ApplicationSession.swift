@@ -10,8 +10,9 @@ class ApplicationSession {
         rapidService = RapidService()
     }
     
+    /*
     var isUserLoggedIn: Bool {
 
     }
-    
+    */
 }

@@ -137,7 +137,7 @@ class BaseService {
         }
         
         if let responseData = data {
-            //            Log.info(String(data: responseData, encoding: .utf8)!)
+            Log.info(String(data: responseData, encoding: .utf8)!)
             completion(ServiceCallResult.success(result: responseData))
             return
         }

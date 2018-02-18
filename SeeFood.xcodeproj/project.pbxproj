@@ -12,8 +12,12 @@
 		418400B02039231C003BDCB8 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AF2039231C003BDCB8 /* BaseService.swift */; };
 		418400B42039232A003BDCB8 /* RapidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400B32039232A003BDCB8 /* RapidService.swift */; };
 		418400B620392345003BDCB8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400B520392345003BDCB8 /* Log.swift */; };
+		418400B920394CBE003BDCB8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400B820394CBE003BDCB8 /* Recipe.swift */; };
+		418400BE20395ECE003BDCB8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400BD20395ECE003BDCB8 /* Extensions.swift */; };
+		418400C0203960B7003BDCB8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400BF203960B7003BDCB8 /* MasterViewController.swift */; };
+		418400C22039632C003BDCB8 /* WatsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400C12039632C003BDCB8 /* WatsonViewController.swift */; };
+		418400C4203963B8003BDCB8 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400C3203963B8003BDCB8 /* RecipeViewController.swift */; };
 		606E962A2038EA0200AEE27D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E96292038EA0200AEE27D /* AppDelegate.swift */; };
-		606E962C2038EA0200AEE27D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E962B2038EA0200AEE27D /* ViewController.swift */; };
 		606E962F2038EA0200AEE27D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606E962D2038EA0200AEE27D /* Main.storyboard */; };
 		606E96322038EA0200AEE27D /* SeeFood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 606E96302038EA0200AEE27D /* SeeFood.xcdatamodeld */; };
 		606E96342038EA0200AEE27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606E96332038EA0200AEE27D /* Assets.xcassets */; };
@@ -64,9 +68,13 @@
 		418400AF2039231C003BDCB8 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		418400B32039232A003BDCB8 /* RapidService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidService.swift; sourceTree = "<group>"; };
 		418400B520392345003BDCB8 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		418400B820394CBE003BDCB8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		418400BD20395ECE003BDCB8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		418400BF203960B7003BDCB8 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		418400C12039632C003BDCB8 /* WatsonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatsonViewController.swift; sourceTree = "<group>"; };
+		418400C3203963B8003BDCB8 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		606E96262038EA0200AEE27D /* SeeFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606E96292038EA0200AEE27D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		606E962B2038EA0200AEE27D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		606E962E2038EA0200AEE27D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		606E96312038EA0200AEE27D /* SeeFood.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SeeFood.xcdatamodel; sourceTree = "<group>"; };
 		606E96332038EA0200AEE27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,7 +128,9 @@
 		418400A9203921AF003BDCB8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				606E962B2038EA0200AEE27D /* ViewController.swift */,
+				418400BF203960B7003BDCB8 /* MasterViewController.swift */,
+				418400C12039632C003BDCB8 /* WatsonViewController.swift */,
+				418400C3203963B8003BDCB8 /* RecipeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -138,13 +148,22 @@
 		418400B720392364003BDCB8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				418400AB203922F8003BDCB8 /* AppConst.swift */,
 				418400AD20392315003BDCB8 /* ApplicationSession.swift */,
 				418400AF2039231C003BDCB8 /* BaseService.swift */,
 				418400B32039232A003BDCB8 /* RapidService.swift */,
 				418400B520392345003BDCB8 /* Log.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		418400BA20394DEE003BDCB8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				418400AB203922F8003BDCB8 /* AppConst.swift */,
+				418400B820394CBE003BDCB8 /* Recipe.swift */,
+				418400BD20395ECE003BDCB8 /* Extensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		606E961D2038EA0200AEE27D = {
@@ -173,6 +192,7 @@
 				606E96622038FE9C00AEE27D /* ImagePicker.framework */,
 				606E965A2038F73500AEE27D /* VisualRecognitionV3.framework */,
 				606E96302038EA0200AEE27D /* SeeFood.xcdatamodeld */,
+				418400BA20394DEE003BDCB8 /* Utilities */,
 				418400B720392364003BDCB8 /* Services */,
 				418400A9203921AF003BDCB8 /* ViewControllers */,
 				418400A820392194003BDCB8 /* Storyboards */,
@@ -336,11 +356,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				418400AE20392316003BDCB8 /* ApplicationSession.swift in Sources */,
-				606E962C2038EA0200AEE27D /* ViewController.swift in Sources */,
+				418400C0203960B7003BDCB8 /* MasterViewController.swift in Sources */,
 				418400B02039231C003BDCB8 /* BaseService.swift in Sources */,
 				418400AC203922F8003BDCB8 /* AppConst.swift in Sources */,
 				606E96322038EA0200AEE27D /* SeeFood.xcdatamodeld in Sources */,
+				418400BE20395ECE003BDCB8 /* Extensions.swift in Sources */,
 				418400B42039232A003BDCB8 /* RapidService.swift in Sources */,
+				418400C22039632C003BDCB8 /* WatsonViewController.swift in Sources */,
+				418400C4203963B8003BDCB8 /* RecipeViewController.swift in Sources */,
+				418400B920394CBE003BDCB8 /* Recipe.swift in Sources */,
 				418400B620392345003BDCB8 /* Log.swift in Sources */,
 				606E962A2038EA0200AEE27D /* AppDelegate.swift in Sources */,
 			);
