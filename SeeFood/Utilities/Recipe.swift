@@ -18,4 +18,19 @@ struct Recipe: Codable {
         case missedIngredientCount
         case likes
     }
+    
+    
+}
+
+struct RecipeInfo: Codable {
+    let instructions: String
+    let healthScore: Int
+    let readyInMinutes: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case instructions
+        case healthScore
+        case readyInMinutes
+    }
+    
 }

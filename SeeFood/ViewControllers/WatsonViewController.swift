@@ -34,7 +34,38 @@ class WatsonViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func presentRecipeViewController() {
+        let targetStoryboard = UIStoryboard(name: "Recipes", bundle: Bundle.main)
+        guard let targetNavigationVC = targetStoryboard.instantiateInitialViewController() as? UINavigationController,
+            let targetVC = targetNavigationVC.childViewControllers.first as? RecipeViewController else {
+                print("Failed RecipeViewController INIT")
+                return
+        }
+        
+        //NOTE:- change _ = targetNavigat... to targetVC =
+        //targetVC model
+        //targetVC.tableview delegate
+        //targetVC.tableview data source
+        
+        transitionControllers(targetNavigationVC: targetNavigationVC)
+    }
     
+    func transitionControllers(targetNavigationVC: UINavigationController) {
+        if let watsonVC = childViewControllers.first as? WatsonViewController {
+            transition(from: watsonVC, to: targetNavigationVC, duration: 1.5, setup: {
+                targetNavigationVC.view.alpha = 0.0
+            }, animation: {
+                targetNavigationVC.view.alpha = 1.0
+                watsonVC.view.alpha = 0.0
+            })
+        } else {
+            addFullScreen(controller: targetNavigationVC, animationDuration: 0.5, setup: {
+                targetNavigationVC.view.alpha = 0.0
+            }, animation: {
+                targetNavigationVC.view.alpha = 1.0
+            })
+        }
+    }
 }
 
 extension WatsonViewController : ImagePickerDelegate {
@@ -51,17 +82,47 @@ extension WatsonViewController : ImagePickerDelegate {
     }
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        let compressData = UIImageJPEGRepresentation(images[0], 0.5) //max value is 1.0 and minimum is 0.0
-        let compressedImage = UIImage(data: compressData!)
-        if let data = UIImagePNGRepresentation(compressedImage!) {
-            let filename = getDocumentsDirectory().appendingPathComponent("copy.png")
-            try? data.write(to: filename)
-            let failure = { (error: Error) in print(error) }
-            visualRecognition.classify(imageFile: filename.absoluteURL, failure: failure) { classifiedImages in
-                print(classifiedImages)
-                //self.view.makeToast(classifiedImages)
+        SwiftSpinner.show("Watson is looking through images...")
+        
+        let numImagesToRecognize = images.count
+        var imagesRecognized = 0
+        
+        var possibleItemsList: [String] = []
+        for image in images {
+            let compressData = UIImageJPEGRepresentation(image, 0.5) //max value is 1.0 and minimum is 0.0
+            let compressedImage = UIImage(data: compressData!)
+            if let data = UIImagePNGRepresentation(compressedImage!) {
+                let filename = getDocumentsDirectory().appendingPathComponent("copy.png")
+                try? data.write(to: filename)
+                let failure = { (error: Error) in print(error) }
+                visualRecognition.classify(imageFile: filename.absoluteURL, failure: failure) { classifiedImages in
+                    
+                    // Examine classes returned from Watson
+                    for val in classifiedImages.images[0].classifiers[0].classes {
+                        if AppConst.FOOD_LIST.contains(val.classification.lowercased()) && (val.score >= AppConst.VREC_MIN_ACCURACY) {
+                            //print(val.classification.lowercased())
+                            possibleItemsList.append(val.classification.lowercased())
+                        }
+                    }
+                    
+                    imagesRecognized += 1
+                    print("possibleItemsList : ", possibleItemsList)
+                    print(classifiedImages.images[0].classifiers[0].classes[0].classification,
+                          classifiedImages.images[0].classifiers[0].classes[0].score)
+                    //self.view.makeToast(classifiedImages)
+                    if (imagesRecognized == numImagesToRecognize) {
+                        SwiftSpinner.hide()
+                        // Segue to the new controller
+                        DispatchQueue.main.async {
+                            self.presentRecipeViewController()
+                        }
+                        
+                    }
+                }
+                
             }
             
         }
+        
     }
 }

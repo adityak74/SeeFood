@@ -28,8 +28,8 @@ class MasterViewController: UIViewController {
          NOTE:- You will need dismissals when you set up segues (not in this function)
         */
         
-        presentWatsonViewController()
-
+        //presentWatsonViewController()
+        presentRecipeViewController()
         
     }
     
