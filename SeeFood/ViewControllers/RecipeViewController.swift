@@ -11,3 +11,9 @@ class RecipeViewController: UIViewController {
     }
     
 }
+
+//NOTE:- Link RecipeViewController to Recipes.storyboard in interface builder
+
+extension RecipeViewController: UITableViewDelegate {
+    
+}

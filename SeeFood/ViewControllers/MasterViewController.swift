@@ -14,6 +14,7 @@ class MasterViewController: UIViewController {
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         presentView()
+        //NOTE:- We may not end up using this
     }
     
     func presentView() {
@@ -23,6 +24,8 @@ class MasterViewController: UIViewController {
          } else {
             presentWatsonViewController()
          }
+         
+         NOTE:- You will need dismissals when you set up segues (not in this function)
         */
         
         presentWatsonViewController()
@@ -56,7 +59,19 @@ class MasterViewController: UIViewController {
     }
     
     func presentRecipeViewController() {
-    
+        let targetStoryboard = UIStoryboard(name: "Recipes", bundle: Bundle.main)
+        guard let targetNavigationVC = targetStoryboard.instantiateInitialViewController() as? UINavigationController,
+            let _ = targetNavigationVC.childViewControllers.first as? RecipeViewController else {
+                print("Failed RecipeViewController INIT")
+                return
+        }
+        
+        //NOTE:- change _ = targetNavigat... to targetVC =
+        //targetVC model
+        //targetVC.tableview delegate
+        //targetVC.tableview data source
+        
+        transitionControllers(targetNavigationVC: targetNavigationVC)
     }
     
     func transitionControllers(targetNavigationVC: UINavigationController) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4132655F2039795500348CDB /* Recipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4132655E2039795500348CDB /* Recipes.storyboard */; };
 		418400AC203922F8003BDCB8 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AB203922F8003BDCB8 /* AppConst.swift */; };
 		418400AE20392316003BDCB8 /* ApplicationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AD20392315003BDCB8 /* ApplicationSession.swift */; };
 		418400B02039231C003BDCB8 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AF2039231C003BDCB8 /* BaseService.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4132655E2039795500348CDB /* Recipes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipes.storyboard; sourceTree = "<group>"; };
 		418400AB203922F8003BDCB8 /* AppConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
 		418400AD20392315003BDCB8 /* ApplicationSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSession.swift; sourceTree = "<group>"; };
 		418400AF2039231C003BDCB8 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				606E962D2038EA0200AEE27D /* Main.storyboard */,
 				418400C520396BAD003BDCB8 /* Watson.storyboard */,
+				4132655E2039795500348CDB /* Recipes.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				606E96372038EA0200AEE27D /* LaunchScreen.storyboard in Resources */,
 				606E96342038EA0200AEE27D /* Assets.xcassets in Resources */,
 				606E962F2038EA0200AEE27D /* Main.storyboard in Resources */,
+				4132655F2039795500348CDB /* Recipes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

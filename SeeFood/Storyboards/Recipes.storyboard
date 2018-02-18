@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g3P-bL-YKK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="LU4-ZF-5oe">
+            <objects>
+                <navigationController id="g3P-bL-YKK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2W1-JP-jLW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qgV-Cc-jGP" kind="relationship" relationship="rootViewController" id="KdL-zo-d3M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Icv-tw-TBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-285" y="73"/>
+        </scene>
+        <!--Recipe View Controller-->
+        <scene sceneID="iz3-sc-mKG">
+            <objects>
+                <viewController id="qgV-Cc-jGP" customClass="RecipeViewController" customModule="SeeFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="458-i3-pIT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nib-1S-jnK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nib-1S-jnK" firstAttribute="top" secondItem="Hhm-DG-7d0" secondAttribute="top" id="0Ja-cA-c51"/>
+                            <constraint firstItem="Nib-1S-jnK" firstAttribute="trailing" secondItem="Hhm-DG-7d0" secondAttribute="trailing" id="7ya-sm-azS"/>
+                            <constraint firstItem="Nib-1S-jnK" firstAttribute="leading" secondItem="Hhm-DG-7d0" secondAttribute="leading" id="fVJ-V7-gOd"/>
+                            <constraint firstItem="Nib-1S-jnK" firstAttribute="bottom" secondItem="Hhm-DG-7d0" secondAttribute="bottom" id="qMb-BK-E4F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hhm-DG-7d0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XMt-hZ-COh">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="TcX-cm-de3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add Ingredient" id="Hkf-vX-2Q2"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PKH-nc-tXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600.79999999999995" y="71.514242878560722"/>
+        </scene>
+    </scenes>
+</document>
