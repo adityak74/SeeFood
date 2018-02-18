@@ -1,0 +1,3 @@
+github "watson-developer-cloud/swift-sdk"
+github "hyperoslo/ImagePicker"
+github "scalessec/Toast-Swift" ~> 3.0.1
