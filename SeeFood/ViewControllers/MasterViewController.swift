@@ -24,10 +24,35 @@ class MasterViewController: UIViewController {
             presentWatsonViewController()
          }
         */
+        
+        presentWatsonViewController()
+
+        
     }
     
     func presentWatsonViewController() {
+        let watsonStoryboard = UIStoryboard(name: "Watson", bundle: Bundle.main)
+        guard let watsonVC = watsonStoryboard.instantiateInitialViewController() as? WatsonViewController else {
+            print("Failed WatsonViewController INIT")
+            return
+        }
         
+        //NOTE:- PASS ANYTHING TO DO W/ MODEL
+        
+        if let currentVC = childViewControllers.first, currentVC !== watsonVC {
+            transition(from: currentVC, to: watsonVC, duration: 1.5, setup: {
+                watsonVC.view.alpha = 0.0
+            }, animation: {
+                watsonVC.view.alpha = 1.0
+                currentVC.view.alpha = 0.0
+            })
+        } else {
+            addFullScreen(controller: watsonVC, animationDuration: 0.5, setup: {
+                watsonVC.view.alpha = 0.0
+            }, animation: {
+                watsonVC.view.alpha = 1.0
+            })
+        }
     }
     
     func presentRecipeViewController() {
