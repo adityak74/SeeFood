@@ -54,18 +54,19 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    //MARK:- Tableview Delegate/DataSource Functions
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("nofr : ",self.recipies.count)
-        return self.recipies.count
-    }
-    
+    //MARK:- UITableviewDelegate Functions
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "recipeInfoSegue", sender: self)
+    }
+    
+    //MARK:- UITableViewDataSource Functions
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("\(#function)",self.recipies.count)
+        return self.recipies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
