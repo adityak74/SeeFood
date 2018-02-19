@@ -10,7 +10,6 @@
 		4132655F2039795500348CDB /* Recipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4132655E2039795500348CDB /* Recipes.storyboard */; };
 		413C97672039F67700FF280C /* MasterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C97662039F67700FF280C /* MasterModel.swift */; };
 		418400AC203922F8003BDCB8 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AB203922F8003BDCB8 /* AppConst.swift */; };
-		418400AE20392316003BDCB8 /* ApplicationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AD20392315003BDCB8 /* ApplicationSession.swift */; };
 		418400B02039231C003BDCB8 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AF2039231C003BDCB8 /* BaseService.swift */; };
 		418400B42039232A003BDCB8 /* RapidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400B32039232A003BDCB8 /* RapidService.swift */; };
 		418400B620392345003BDCB8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400B520392345003BDCB8 /* Log.swift */; };
@@ -72,7 +71,6 @@
 		4132655E2039795500348CDB /* Recipes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipes.storyboard; sourceTree = "<group>"; };
 		413C97662039F67700FF280C /* MasterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterModel.swift; sourceTree = "<group>"; };
 		418400AB203922F8003BDCB8 /* AppConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
-		418400AD20392315003BDCB8 /* ApplicationSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSession.swift; sourceTree = "<group>"; };
 		418400AF2039231C003BDCB8 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		418400B32039232A003BDCB8 /* RapidService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidService.swift; sourceTree = "<group>"; };
 		418400B520392345003BDCB8 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 		418400B720392364003BDCB8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				418400AD20392315003BDCB8 /* ApplicationSession.swift */,
 				418400AF2039231C003BDCB8 /* BaseService.swift */,
 				418400B32039232A003BDCB8 /* RapidService.swift */,
 				418400B520392345003BDCB8 /* Log.swift */,
@@ -399,7 +396,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				418400AE20392316003BDCB8 /* ApplicationSession.swift in Sources */,
 				418400C0203960B7003BDCB8 /* MasterViewController.swift in Sources */,
 				606E966D2039B52E00AEE27D /* RecipeInfoViewController.swift in Sources */,
 				418400B02039231C003BDCB8 /* BaseService.swift in Sources */,

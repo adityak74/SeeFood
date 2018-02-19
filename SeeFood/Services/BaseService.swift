@@ -72,7 +72,7 @@ class BaseService {
         request.setValue(RequestBodyContentType.json.rawValue, forHTTPHeaderField: "Content-Type")
         request.httpBody = httpBody
         
-        //        Log.info("🌎 POST: \(endpoint.path) with body: \(String(data: httpBody, encoding: .utf8) ?? "No Body Data")")
+        //Log.info("🌎 POST: \(endpoint.path) with body: \(String(data: httpBody, encoding: .utf8) ?? "No Body Data")")
         
         // Create the URL Session and the task to perform
         let session = URLSession(configuration: URLSessionConfiguration.default)

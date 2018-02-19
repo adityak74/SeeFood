@@ -63,7 +63,6 @@ class RapidService {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .iso8601
                     let parsedJson = try decoder.decode(RecipeInfo.self, from: json as! Data)
-//                    print("pjson",parsedJson)
                     completion(parsedJson)
                 } catch let jsonError {
                     print("Error serializing json:", jsonError)

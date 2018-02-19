@@ -72,15 +72,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("Cur recipe : ", indexPath.row)
         let recipe = self.recipies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell") as? RecipeTableViewCell!
-        //        cell!.textCell?.text = workout?.title
-        //        cell!.backgroundColor = workout?.color
-        //        cell!.countLabel.text = "\(indexPath.row+1)"
-        //        cell!.selectionStyle = UITableViewCellSelectionStyle.None
-        
-        //cell!.recipeNameLabel.text = recipe.title
+
         cell?.recipeNameLabel.text = recipe.title
         cell?.recipeImageView.downloadedFrom(link: recipe.image)
+        
         return cell!
     }
-    
 }

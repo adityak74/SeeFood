@@ -1,5 +1,6 @@
 import Foundation
 
+//MARK:- Store all application-specific global variables
 struct AppConst {
     static let rapidBaseURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?number=20&ingredients="
     static let rapidRecipeInfoBaseURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/<id>/information"

@@ -1,4 +1,3 @@
-//
 // Copyright (c) 2015-present Marin Todorov, Underplot ltd.
 // This code is distributed under the terms and conditions of the MIT license.
 //

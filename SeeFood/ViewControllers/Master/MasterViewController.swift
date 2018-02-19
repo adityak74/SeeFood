@@ -2,37 +2,26 @@ import UIKit
 
 class MasterViewController: UIViewController {
     
+    //MARK:- Vars
     private var model: MasterModel?
-    private var presentWatson = true    //FIX ME!!!!!!!!!!!!!!!!!!!!!
+    private var presentWatson: Bool?
     
+    //MARK:- ViewController Logic
     override func viewDidLoad() {
         super.viewDidLoad()
         self.model = MasterModel()
-        //print("viewDidloadMaster")
+        self.presentWatson = true   //NOTE:- Will change when persistence supported
         presentView()
-    }
-    
-    /*
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("🤗\(#function)")
-        presentView()
-    }
- */
- 
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-        presentView()
-        //NOTE:- We may not end up using this
     }
     
     func setBool(with state: Bool) {
         self.presentWatson = state
     }
     
-    
+    //MARK:- ViewController Presentations Logic
     func presentView() {
-        print("👍\(#function):presentWatson:\(presentWatson)")
-        if (presentWatson) {
+        //print("👍\(#function):presentWatson:\(String(describing: presentWatson))")
+        if (presentWatson)! {
             presentWatsonViewController()
         } else {
             presentRecipeViewController()
@@ -78,12 +67,13 @@ class MasterViewController: UIViewController {
     }
     
     func dismissViewController(with state: Bool) {
-        print("👍\(#function):state:\(state)")
+        //print("👍\(#function):state:\(state)")
         setBool(with: state)
         self.dismiss(animated: true, completion: nil)
         presentView()
     }
     
+    //MARK:- Transitions
     func transitionControllers(targetNavigationVC: UINavigationController) {
         if let watsonVC = childViewControllers.first as? WatsonViewController {
             transition(from: watsonVC, to: targetNavigationVC, duration: 1.5, setup: {
@@ -103,6 +93,7 @@ class MasterViewController: UIViewController {
     
 }
 
+//MARK:- Delegates
 extension MasterViewController: WatsonViewControllerDelegate {
     
     func signalRapid(with keys: [String]) {
@@ -121,6 +112,5 @@ extension MasterViewController: RecipeViewControllerDelegate {
     func addIngredients() {
         dismissViewController(with: true)
     }
-    
 }
 

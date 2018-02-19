@@ -9,7 +9,7 @@
 import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
-
+    //MARK:- Outlets
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeImageView: UIImageView!
 }
