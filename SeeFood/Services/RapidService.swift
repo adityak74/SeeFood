@@ -37,7 +37,7 @@ class RapidService {
                     let parsedJson = try decoder.decode([Recipe].self, from: json as! Data)
                     completion(parsedJson)
                 } catch let jsonError {
-                    print("Error serializing json:", jsonError)
+                    print("💀\(#function):Error serializing json:", jsonError)
                     completion(nil)
                     return
                 }
@@ -51,9 +51,7 @@ class RapidService {
     func getRecipeInfo(from recipe: Recipe, completion: @escaping (_ recipeInfo: RecipeInfo?) -> ()) {
         //MARK:- Instantiate Path
         var path = AppConst.rapidRecipeInfoBaseURL
-        
         path = path.replacingOccurrences(of: "<id>", with: String(recipe.id))
-        print("info path : ", path)
         
         //MARK:- Perform GET Query
         serviceClient.get(from: URL(string: path)!, httpHeaders: AppConst.RAPID_HEADER, queryParams: nil) { (result) in
@@ -65,7 +63,7 @@ class RapidService {
                     let parsedJson = try decoder.decode(RecipeInfo.self, from: json as! Data)
                     completion(parsedJson)
                 } catch let jsonError {
-                    print("Error serializing json:", jsonError)
+                    print("💀\(#function):Error serializing json:", jsonError)
                     completion(nil)
                     return
                 }

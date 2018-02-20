@@ -6,8 +6,8 @@ struct AppConst {
     static let rapidRecipeInfoBaseURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/<id>/information"
     static let RAPID_HEADER: [String:String] = ["X-Mashape-Key":"xrpXKh7VSgmshCw109n4dnhLdqdip1Dz8u5jsnupEUXqPIftBJ", "X-Mashape-Host":"spoonacular-recipe-food-nutrition-v1.p.mashape.com"]
     
-   // static let IBM_WATSON_KEY = "8e5631d0af2900db0920cbdfcdbac8366b75260a"
-    static let IBM_WATSON_KEY = "e3d429d754362edac280ad1e0199a9e6f5f009e4"
+    static let IBM_WATSON_KEY = "8e5631d0af2900db0920cbdfcdbac8366b75260a"
+    //static let IBM_WATSON_KEY = "e3d429d754362edac280ad1e0199a9e6f5f009e4"
     static let IBM_WATSON_VERSION = "2018-02-17" // use today's date for the most recent version
     
     static let VREC_MIN_ACCURACY = 0.65

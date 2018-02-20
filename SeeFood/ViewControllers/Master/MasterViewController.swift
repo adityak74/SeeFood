@@ -20,7 +20,6 @@ class MasterViewController: UIViewController {
     
     //MARK:- ViewController Presentations Logic
     func presentView() {
-        //print("👍\(#function):presentWatson:\(String(describing: presentWatson))")
         if (presentWatson)! {
             presentWatsonViewController()
         } else {
@@ -31,7 +30,7 @@ class MasterViewController: UIViewController {
     func presentWatsonViewController() {
         let watsonStoryboard = UIStoryboard(name: "Watson", bundle: Bundle.main)
         guard let watsonVC = watsonStoryboard.instantiateInitialViewController() as? WatsonViewController else {
-            print("Failed WatsonViewController INIT")
+            print("🤢 Failed WatsonViewController INIT")
             return
         }
         
@@ -57,17 +56,16 @@ class MasterViewController: UIViewController {
         let targetStoryboard = UIStoryboard(name: "Recipes", bundle: Bundle.main)
         guard let targetNavigationVC = targetStoryboard.instantiateInitialViewController() as? UINavigationController,
             let targetVC = targetNavigationVC.childViewControllers.first as? RecipeViewController else {
-                print("Failed RecipeViewController INIT")
+                print("🤢 Failed RecipeViewController INIT")
                 return
         }
-    
+        
+        self.model?.recipeDelegate = targetVC
         targetVC.delegate = self
-        targetVC.ingredients = model?.getIngredients()
         transitionControllers(targetNavigationVC: targetNavigationVC)
     }
     
     func dismissViewController(with state: Bool) {
-        //print("👍\(#function):state:\(state)")
         setBool(with: state)
         self.dismiss(animated: true, completion: nil)
         presentView()
@@ -90,7 +88,6 @@ class MasterViewController: UIViewController {
             })
         }
     }
-    
 }
 
 //MARK:- Delegates
@@ -104,13 +101,25 @@ extension MasterViewController: WatsonViewControllerDelegate {
 
 extension MasterViewController: RecipeViewControllerDelegate {
     
-    func clearIngredients() {
-        model?.clearIngredients()
+    func clearAll() {
+        model?.clearAll()
         dismissViewController(with: true)
     }
     
     func addIngredients() {
         dismissViewController(with: true)
+    }
+    
+    func setCurrentRecipes() {
+        model?.setRecipes()
+    }
+    
+    func getCurrentRecipes() -> [Recipe] {
+        return (model?.getRecipes())!
+    }
+    
+    func getSelectedRecipeInstructions(from index: Int) {
+        model?.getRecipeInstructions(from: index)
     }
 }
 

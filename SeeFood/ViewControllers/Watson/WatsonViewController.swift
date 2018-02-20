@@ -18,10 +18,7 @@ class WatsonViewController: UIViewController {
     //MARK:- ViewController Logic
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         visualRecognition = VisualRecognition(apiKey: AppConst.IBM_WATSON_KEY, version: AppConst.IBM_WATSON_VERSION)
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,13 +56,12 @@ extension WatsonViewController : ImagePickerDelegate {
             if let data = UIImagePNGRepresentation(compressedImage!) {
                 let filename = getDocumentsDirectory().appendingPathComponent("copy.png")
                 try? data.write(to: filename)
-                let failure = { (error: Error) in print(error) }
+                let failure = { (error: Error) in print("🤕\(#function)", error) }
                 visualRecognition.classify(imageFile: filename.absoluteURL, failure: failure) { classifiedImages in
                     
                     //MARK:- Examine classes returned from Watson
                     for val in classifiedImages.images[0].classifiers[0].classes {
                         if AppConst.FOOD_LIST.contains(val.classification.lowercased()) && (val.score >= AppConst.VREC_MIN_ACCURACY) {
-                            //print(val.classification.lowercased())
                             possibleItemsList.append(val.classification.lowercased())
                         }
                     }
