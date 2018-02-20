@@ -93,7 +93,7 @@ class MasterViewController: UIViewController {
 }
 
 //MARK:- Delegates
-extension MasterViewController: MasterModelDelegate {
+extension MasterViewController: MasterModelMasterDelegate {
     
     func dismissWatson() {
         dismissViewController(with: false)

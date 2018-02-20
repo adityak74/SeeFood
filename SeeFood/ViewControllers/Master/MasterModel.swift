@@ -10,7 +10,7 @@ protocol MasterModelWatsonDelegate: class {
     func getFileName() -> URL
 }
 
-protocol MasterModelDelegate: class {
+protocol MasterModelMasterDelegate: class {
     func dismissWatson()
 }
 
@@ -20,7 +20,7 @@ class MasterModel {
     private let session: ApplicationSession
     weak var recipeDelegate: MasterModelRecipeDelegate?
     weak var watsonDelegate: MasterModelWatsonDelegate?
-    weak var masterDelegate: MasterModelDelegate?
+    weak var masterDelegate: MasterModelMasterDelegate?
     private var ingredients: [String]
     private var recipes: [Recipe]
     
