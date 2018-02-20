@@ -79,7 +79,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
 }
 
 //MARK:- Delegates
-extension RecipeViewController: MasterModelDelegate {
+extension RecipeViewController: MasterModelRecipeDelegate {
 
     func updateData() {
         reloadData()

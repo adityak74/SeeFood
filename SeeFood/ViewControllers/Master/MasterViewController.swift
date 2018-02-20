@@ -10,6 +10,7 @@ class MasterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.model = MasterModel()
+        self.model?.masterDelegate = self
         self.presentWatson = true   //NOTE:- Will change when persistence supported
         presentView()
     }
@@ -34,6 +35,7 @@ class MasterViewController: UIViewController {
             return
         }
         
+        self.model?.watsonDelegate = watsonVC
         watsonVC.delegate = self
         
         if let currentVC = childViewControllers.first, currentVC !== watsonVC {
@@ -91,11 +93,17 @@ class MasterViewController: UIViewController {
 }
 
 //MARK:- Delegates
-extension MasterViewController: WatsonViewControllerDelegate {
+extension MasterViewController: MasterModelDelegate {
     
-    func signalRapid(with keys: [String]) {
-        model?.setIngredients(with: keys)
+    func dismissWatson() {
         dismissViewController(with: false)
+    }
+}
+
+extension MasterViewController: WatsonViewControllerDelegate {
+
+    func processImages(with images: [UIImage]) {
+        model?.pingWatson(with: images)
     }
 }
 
