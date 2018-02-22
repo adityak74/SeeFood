@@ -4,7 +4,7 @@ import Foundation
 struct AppConst {
     static let rapidBaseURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?number=20&ingredients="
     static let rapidRecipeInfoBaseURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/<id>/information"
-    static let RAPID_HEADER: [String:String] = ["X-Mashape-Key":"xrpXKh7VSgmshCw109n4dnhLdqdip1Dz8u5jsnupEUXqPIftBJ", "X-Mashape-Host":"spoonacular-recipe-food-nutrition-v1.p.mashape.com"]
+    static let RAPID_HEADER: [String:String] = ["X-Mashape-Key":"", "X-Mashape-Host":"spoonacular-recipe-food-nutrition-v1.p.mashape.com"]
     
     static let IBM_WATSON_KEY = ""
     //static let IBM_WATSON_KEY = ""
