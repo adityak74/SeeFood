@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41134A92203E4649000E5313 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41134A91203E4649000E5313 /* AppConst.swift */; };
 		4132655F2039795500348CDB /* Recipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4132655E2039795500348CDB /* Recipes.storyboard */; };
 		413C97672039F67700FF280C /* MasterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C97662039F67700FF280C /* MasterModel.swift */; };
-		418400AC203922F8003BDCB8 /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AB203922F8003BDCB8 /* AppConst.swift */; };
 		418400B02039231C003BDCB8 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400AF2039231C003BDCB8 /* BaseService.swift */; };
 		418400B42039232A003BDCB8 /* RapidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400B32039232A003BDCB8 /* RapidService.swift */; };
 		418400B620392345003BDCB8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418400B520392345003BDCB8 /* Log.swift */; };
@@ -69,9 +69,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41134A91203E4649000E5313 /* AppConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
 		4132655E2039795500348CDB /* Recipes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipes.storyboard; sourceTree = "<group>"; };
 		413C97662039F67700FF280C /* MasterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterModel.swift; sourceTree = "<group>"; };
-		418400AB203922F8003BDCB8 /* AppConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
 		418400AF2039231C003BDCB8 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		418400B32039232A003BDCB8 /* RapidService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidService.swift; sourceTree = "<group>"; };
 		418400B520392345003BDCB8 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 		418400BA20394DEE003BDCB8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				418400AB203922F8003BDCB8 /* AppConst.swift */,
+				41134A91203E4649000E5313 /* AppConst.swift */,
 				418400B820394CBE003BDCB8 /* Recipe.swift */,
 				418400BD20395ECE003BDCB8 /* Extensions.swift */,
 				606E966820398BDF00AEE27D /* SwiftSpinner.swift */,
@@ -400,10 +400,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				418400C0203960B7003BDCB8 /* MasterViewController.swift in Sources */,
+				41134A92203E4649000E5313 /* AppConst.swift in Sources */,
 				606E966D2039B52E00AEE27D /* RecipeInfoViewController.swift in Sources */,
 				418400B02039231C003BDCB8 /* BaseService.swift in Sources */,
 				606E966B20399C1100AEE27D /* RecipeTableViewCell.swift in Sources */,
-				418400AC203922F8003BDCB8 /* AppConst.swift in Sources */,
 				606E96322038EA0200AEE27D /* SeeFood.xcdatamodeld in Sources */,
 				418400BE20395ECE003BDCB8 /* Extensions.swift in Sources */,
 				606E966920398BDF00AEE27D /* SwiftSpinner.swift in Sources */,
