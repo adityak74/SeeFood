@@ -6,3 +6,5 @@ Our team chose to use the IBMWatson and RapidAPI api's to create
 a mobile app that uses image recognition to generate search keys
 from photos of food, and return a list of recipes associated with
 those ingredients.
+
+A quick video to the app: https://www.youtube.com/watch?v=gk7cxc32tu4
