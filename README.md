@@ -8,3 +8,5 @@ from photos of food, and return a list of recipes associated with
 those ingredients.
 
 A quick video to the app: https://www.youtube.com/watch?v=gk7cxc32tu4
+
+<a href="https://ibb.co/cAd5L7"><img src="https://preview.ibb.co/bOLKf7/Poster.png" alt="Poster" border="0"></a>
